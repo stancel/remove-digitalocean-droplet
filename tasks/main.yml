@@ -1,0 +1,15 @@
+---
+# tasks file for remove-digitalocean-droplet
+
+- name: "Delete the {{ remove_digitalocean_droplet_host_name }} droplet"
+  digital_ocean: 
+    state: absent
+    command: droplet
+    name: "{{ remove_digitalocean_droplet_host_name }}"
+    api_token: "{{ remove_digitalocean_droplet_do_token }}"
+    wait_timeout: "{{ remove_digitalocean_droplet_wait_timeout }}"
+    unique_name: "{{ remove_digitalocean_droplet_unique_name }}"
+  register: my_droplet
+
+- name: "Print info about deleted droplet"
+  debug: var=my_droplet

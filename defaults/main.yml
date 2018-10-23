@@ -1,0 +1,9 @@
+---
+# defaults file for remove-digitalocean-droplet
+
+# How long before wait gives up, in seconds
+remove_digitalocean_droplet_wait_timeout: 500
+
+# Recommend keeping this setting. Makes the creation of the droplet idempotent.
+remove_digitalocean_droplet_unique_name: yes
+
